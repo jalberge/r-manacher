@@ -7,7 +7,7 @@ Maintainer: Jean-Baptiste Alberge <jbalberge@gmail.com>
 Description: Identifies the longest palindromic substring.
     Based on the solutions from Manacher, Apostolico, Breslauer, and Galil, 
     which use a center and a radius to identify the longest palindrome.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
