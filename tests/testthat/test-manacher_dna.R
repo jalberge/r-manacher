@@ -20,6 +20,7 @@ test_that("manacher_dna finds longest palindromic substring", {
   expect_equal(manacher_dna("A", dna = TRUE), list(center=0.5, start=1, match="", length=0))
   expect_equal(manacher_dna("CC", dna = TRUE), list(center=0.5, start=1, match="", length=0))
   expect_equal(manacher_dna("GCC", dna = TRUE), list(center=1.5, start=1, match="GC", length=2))
+  expect_equal(manacher_dna("GCCC", dna = TRUE), list(center=1.5, start=1, match="GC", length=2))
   expect_equal(manacher_dna("", dna = TRUE), list(center=0.5, start=1, match="", length=0))
 
   expect_equal(manacher_dna("TACGTT", dna = TRUE), list(center=3.5, start=2, match="ACGT", length=4))

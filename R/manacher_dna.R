@@ -18,8 +18,10 @@ manacher_dna <- function(s, dna = FALSE) {
       stop("The sequence contains invalid characters. Only A, C, G, and T are allowed.")
     }
     t.s <- chartr("ACGT", "TGCA", s)
+    step <- 2 # only check for even dna
   } else {
     t.s <- s
+    step <- 1
   }
 
   # Transform the sub and target string to avoid even/odd length issues
@@ -31,7 +33,7 @@ manacher_dna <- function(s, dna = FALSE) {
   c <- 0
   r <- 0
 
-  for (i in seq_len(n)) {
+  for (i in seq(1, n, by=step)) {
 
     mirr <- 2 * c - i
 
@@ -49,14 +51,9 @@ manacher_dna <- function(s, dna = FALSE) {
     if (i + p[i] > r) {
       c <- i
       r <- i + p[i]
+      message("changed c: ", c)
+      message("changed r: ", r)
     }
-  }
-
-  # Find the maximum element in p
-  if(dna) {
-    # center of the palindrome has to be a |
-    nuc.mask <- rep(c(FALSE, TRUE), length.out=nchar(q.s))
-    p[nuc.mask] <- 0
   }
 
   max_len <- max(p)
