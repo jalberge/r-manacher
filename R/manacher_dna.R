@@ -7,7 +7,7 @@
 #' @param dna A logical value indicating whether to check against the reverse complement.
 #' @return A character string representing the longest palindromic substring.
 #' @export
-manacher_dna <- function(s, dna = FALSE) {
+manacher_dna <- function(s, dna = TRUE) {
 
   if(dna) {
     # Compute the complement of the sequence as a target not query
