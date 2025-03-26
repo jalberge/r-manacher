@@ -28,14 +28,6 @@ library(manacher)
 manacher("kayak!")
 #> [1] "kayak"
 manacher_dna("CGGG", dna=TRUE)
-#> changed c: 1
-#> changed r: 1
-#> changed c: 3
-#> changed r: 5
-#> changed c: 7
-#> changed r: 7
-#> changed c: 9
-#> changed r: 9
 #> $center
 #> [1] 1.5
 #> 
@@ -48,3 +40,12 @@ manacher_dna("CGGG", dna=TRUE)
 #> $length
 #> [1] 2
 ```
+
+### Random sequences of DNA
+
+``` r
+nuc <- sapply(1:1000, \(x) manacher_dna(paste0(sample(c("A", "C", "G", "T"), 50, replace = TRUE, prob = c(0.59, 0.41, 0.41, 0.59)), collapse = ""))) |> t() |> as.data.frame()
+hist(as.numeric(nuc[,"length"]))
+```
+
+<img src="man/figures/README-dna-1.png" width="100%" />
