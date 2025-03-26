@@ -1,0 +1,40 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# manacher
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+My own try to implement Manacher's algorithm to find the longest palindromic substring. Also works for DNA sequences (with the convention that a DNA palindrome cannot have a single central nucleotide). 
+
+## Installation
+
+You can install the development version of manacher from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("pak")
+pak::pak("jalberge/r-manacher")
+```
+
+## Example
+
+
+```{r example}
+library(manacher)
+## basic example code
+manacher("kayak!")
+manacher_dna("CGGG", dna=TRUE)
+```
