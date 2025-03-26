@@ -4,6 +4,9 @@
 # manacher
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/jalberge/r-manacher/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jalberge/r-manacher/actions/workflows/R-CMD-check.yaml)
+
 <!-- badges: end -->
 
 My own try to implement Manacher’s algorithm to find the longest
