@@ -4,12 +4,14 @@
 \alias{manacher_dna}
 \title{Manacher's Algorithm for DNA}
 \usage{
-manacher_dna(s, dna = TRUE)
+manacher_dna(s, dna = TRUE, position = "max")
 }
 \arguments{
 \item{s}{A character string representing a DNA sequence.}
 
 \item{dna}{A logical value indicating whether to check against the reverse complement.}
+
+\item{position}{Either "max" (default, return longest palindrome) or a 1-based position in the query string}
 }
 \value{
 A character string representing the longest palindromic substring.
