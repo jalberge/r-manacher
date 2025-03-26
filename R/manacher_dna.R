@@ -5,9 +5,10 @@
 #'
 #' @param s A character string representing a DNA sequence.
 #' @param dna A logical value indicating whether to check against the reverse complement.
+#' @param position Either "max" (default, return longest palindrome) or a 1-based position in the query string
 #' @return A character string representing the longest palindromic substring.
 #' @export
-manacher_dna <- function(s, dna = TRUE) {
+manacher_dna <- function(s, dna = TRUE, position="max") {
 
   if(dna) {
     # Compute the complement of the sequence as a target not query
@@ -51,6 +52,20 @@ manacher_dna <- function(s, dna = TRUE) {
     if (i + p[i] > r) {
       c <- i
       r <- i + p[i]
+    }
+  }
+
+  if(position!="max" && !is.na(is.numeric(position))) {
+    # search for the longest palindrome overlapping with that position
+    # likely not optimal algorithm for that purpose, but convenient option
+    q.p <- 2*position + 1 # index in the query character string space
+    if(q.p > n || q.p <= 1) {
+      warning("position out of string")
+    }
+    for (j in seq(1, n, by=step)) {
+      if(q.p <= j-p[j] || q.p > j+p[j]) {
+        p[j] <- 0
+      }
     }
   }
 
