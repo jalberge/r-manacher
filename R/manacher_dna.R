@@ -51,8 +51,6 @@ manacher_dna <- function(s, dna = FALSE) {
     if (i + p[i] > r) {
       c <- i
       r <- i + p[i]
-      message("changed c: ", c)
-      message("changed r: ", r)
     }
   }
 
