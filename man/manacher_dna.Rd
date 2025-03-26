@@ -4,7 +4,7 @@
 \alias{manacher_dna}
 \title{Manacher's Algorithm for DNA}
 \usage{
-manacher_dna(s, dna = FALSE)
+manacher_dna(s, dna = TRUE)
 }
 \arguments{
 \item{s}{A character string representing a DNA sequence.}
