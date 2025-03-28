@@ -16,7 +16,9 @@ manacher_dna <- function(s, dna = TRUE, position="max") {
     # no need to reverse as this is what manacher's algorithm does
     s <- toupper(s)
     if (!grepl("^[ACGT]*$", s)) {
-      stop("The sequence contains invalid characters. Only A, C, G, and T are allowed.")
+      mess <- "The sequence contains invalid characters. Only A, C, G, and T are allowed. "
+      err.mess <- paste0(mess, "Seq: ", s)
+      stop(err.mess)
     }
     t.s <- chartr("ACGT", "TGCA", s)
     step <- 2 # only check for even dna

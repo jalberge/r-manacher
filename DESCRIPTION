@@ -1,7 +1,7 @@
 Package: manacher
 Type: Package
 Title: Manacher's algorithm
-Version: 0.1.0
+Version: 0.2.0
 Author: Manacher (1975), Apostolico, Breslauer & Galil (1995)
 Maintainer: Jean-Baptiste Alberge <jbalberge@gmail.com>
 Description: Identifies the longest palindromic substring.
